@@ -11,6 +11,13 @@ fn show(table: &Table) {
         println!("--------------------------------");
     }
 }
+
+fn sort_languages(table: &mut Table) {
+    for (_domain, languages) in table {
+        languages.sort();
+    }
+}
+
 fn main() {
     let mut table = Table::new();
     table.insert(
@@ -32,5 +39,7 @@ fn main() {
         ],
     );
 
+    show(&table);
+    sort_languages(&mut table);
     show(&table);
 }
