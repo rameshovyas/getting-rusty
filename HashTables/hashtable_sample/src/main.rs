@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 type Table = HashMap<String, Vec<String>>;
 
-fn show(table: Table) {
+fn show(table: &Table) {
     for (domain, languages) in table {
         println!("Languages used for {} ", domain);
         println!("--------------------------------");
@@ -32,5 +32,5 @@ fn main() {
         ],
     );
 
-    show(table);
+    show(&table);
 }
